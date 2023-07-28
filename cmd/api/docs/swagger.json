@@ -1,0 +1,111 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api/offer-company/{country_name}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get all companies",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Offer"
+                ],
+                "summary": "Get all offer companies",
+                "operationId": "FindAll",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Data Format",
+                        "name": "data_format",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Country Name",
+                        "name": "country_name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/domain.OfferCompany"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "domain.OfferCompany": {
+            "type": "object",
+            "properties": {
+                "client_id": {
+                    "type": "integer"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "flag": {
+                    "type": "integer"
+                },
+                "image": {
+                    "type": "string"
+                },
+                "image_height": {
+                    "type": "integer"
+                },
+                "image_width": {
+                    "type": "integer"
+                },
+                "offer_home": {
+                    "type": "integer"
+                },
+                "offer_id": {
+                    "type": "integer"
+                },
+                "page_count": {
+                    "type": "integer"
+                },
+                "position": {
+                    "type": "integer"
+                },
+                "show_from": {
+                    "type": "string"
+                },
+                "store_url": {
+                    "type": "string"
+                },
+                "store_url_title": {
+                    "type": "string"
+                },
+                "text_locale": {
+                    "type": "string"
+                },
+                "valid_from": {
+                    "type": "string"
+                },
+                "valid_to": {
+                    "type": "string"
+                },
+                "validity_text_locale": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
