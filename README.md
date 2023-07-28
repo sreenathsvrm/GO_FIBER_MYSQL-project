@@ -11,7 +11,7 @@
 
 ## Using `go-FIBER-clean-arch` project
 
-To use `go-gin-clean-arch` project, follow these steps:
+To use `go-fiber-clean-arch` project, follow these steps:
 # Install dependencies
 make deps
 
